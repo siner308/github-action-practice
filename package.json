@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodejs server.js"
+    "test": "jest --forceExit --coverage --verbose"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,9 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-session": "^1.16.2"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2"
   }
 }
