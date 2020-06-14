@@ -8,6 +8,10 @@ module.exports = function(app, fs)
         });
     });
 
+    app.get('/health', (req, res) => {
+        res.status(200).send('OK');
+    });
+
     app.get('/login', function(req, res){
         res.status(200).send({
             result: 'hello world',
