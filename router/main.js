@@ -3,7 +3,9 @@ module.exports = function(app, fs)
     app.get('/', function(req, res){
         sess = req.session;
         console.log(sess.username);
-        res.json({'session': sess.username});
+        res.status(200).send({
+            session: sess.username,
+        });
     });
 
     app.get('/login', function(req, res){
