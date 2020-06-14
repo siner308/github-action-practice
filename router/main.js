@@ -9,7 +9,9 @@ module.exports = function(app, fs)
     });
 
     app.get('/login', function(req, res){
-        res.json({'result': 'hello world'});
+        res.status(200).send({
+            result: 'hello world',
+        });
     });
 
     app.get('/login/:username/:password', function(req, res){
@@ -34,12 +36,12 @@ module.exports = function(app, fs)
                 result["success"] = 1;
                 sess.username = username;
                 sess.name = users[username]["name"];
-                res.json(result);
+                res.status(200).send(result);
 
             }else{
                 result["success"] = 0;
                 result["error"] = "incorrect";
-                res.json(result);
+                res.status(400).send(result);
             }
         })
     });
