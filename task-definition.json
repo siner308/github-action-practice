@@ -1,5 +1,5 @@
 {
-    "family": "",
+    "family": "taskci",
     "taskRoleArn": "",
     "executionRoleArn": "arn:aws:iam::148455462321:role/ecsTaskExecutionRole",
     "networkMode": "bridge",
