@@ -20,7 +20,7 @@ workflows:
             - aws-ecr/build-and-push-image
           family: '${ECS_SERVICE_NAME}'
           cluster-name: '${ECS_CLUSTER_NAME}'
-          container-image-name-updates: 'container=${ECS_SERVICE_NAME},tag=${CIRCLE_TAG}'
+          container-image-name-updates: 'container=${ECS_CONTAINER_NAME},tag=${CIRCLE_TAG}'
 jobs:
   build:
     docker:
