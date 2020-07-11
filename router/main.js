@@ -9,7 +9,7 @@ module.exports = function(app, fs)
     });
 
     app.get('/health', (req, res) => {
-        res.status(200).send('OK');
+        res.status(200).send('I\'m OK');
     });
 
     app.get('/login', function(req, res){
