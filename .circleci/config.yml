@@ -14,13 +14,13 @@ workflows:
           requires:
             - build
           repo: '${AWS_RESOURCE_NAME_PREFIX}'
-          tag: 'latest,${CIRCLE_TAG},${CIRCLE_SHA1}'
+          tag: 'latest,${CIRCLE_TAG}'
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build-and-push-image
           family: '${ECS_SERVICE_NAME}'
           cluster-name: '${ECS_CLUSTER_NAME}'
-          container-image-name-updates: 'container=${ECS_SERVICE_NAME},tag=${CIRCLE_SHA1}'
+          container-image-name-updates: 'container=${ECS_SERVICE_NAME},tag=${CIRCLE_TAG}'
 jobs:
   build:
     docker:
